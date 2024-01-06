@@ -1,5 +1,5 @@
 import React from "react";
-import Text from "@/src/ui/components/text/text";
+import Text from "@/src/components/text/text";
 
 type Props = {
   renderAs?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

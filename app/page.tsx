@@ -1,22 +1,36 @@
-import { Root } from "@/src/core/models/dto-api";
-import Card from "@/src/ui/components/card/card";
-import Heading from "@/src/ui/components/text/heading";
-import Text from "@/src/ui/components/text/text";
+import { Root } from "@/src/features/search/types/dto-api";
+import Card from "@/src/components/card/card";
+import Heading from "@/src/components/text/heading";
+import Text from "@/src/components/text/text";
+import Toggle from "@/src/components/toggle/toggle";
 import formatPrice from "@/src/utils/format-price";
+import { NextPage } from "next";
+import Filters from "@/src/features/search/components/filters";
+import ModelSearch from "@/src/features/search/components/model-search";
+import searchToApiParams from "@/src/features/search/utils/search-to-api-params";
 
 const API_URL = "https://php-api.mywheels.dev/api/";
 
-async function getData<T>(): Promise<T> {
+type Filter = {
+  models?: string[];
+};
+
+type GetData = {
+  filter: Filter;
+};
+
+async function getData<T>({ filter }: GetData): Promise<T> {
   const body = {
     method: "search.map",
     params: {
-      filter: {
-        // onlyAvailable: false,
-        // models: ["Corsa"],
-        // fuelType: "benzine",
-        // towbar: true,
-        // winterTires: true,
-      },
+      filter,
+      // filter: {
+      //   // onlyAvailable: false,
+      //   // models: ["Corsa"],
+      //   // fuelType: "benzine",
+      //   // towbar: true,
+      //   // winterTires: true,
+      // },
       locationPoint: {
         latitudeMax: 56,
         latitudeMin: 48,
@@ -43,12 +57,21 @@ async function getData<T>(): Promise<T> {
   return data;
 }
 
-export default async function Home() {
-  const data = await getData<Root>();
+type PageProps = {
+  searchParams?: Record<string, string>;
+};
+
+export default async function Home({ searchParams }: PageProps) {
+  const data = await getData<Root>({
+    filter: searchToApiParams(searchParams),
+  });
 
   return (
     <main>
-      <h1 className="text-yellow-50">MyWheels</h1>
+      <Heading renderAs="h1">Search Results ({data.result.total})</Heading>
+      <Filters />
+      <ModelSearch />
+
       <section className="flex flex-col gap-4">
         {data.result.results.map(({ resource, availability }) => {
           const {
