@@ -30,7 +30,7 @@ const FilterSelect: React.FC<Props> = ({ filterKey, options, label }) => {
       options={options}
       label={label}
       onChange={handleChange}
-      value={filterValue}
+      value={filterValue ?? undefined}
     />
   );
 };
