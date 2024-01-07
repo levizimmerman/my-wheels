@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import Text from "../text/text";
 
 type Props = {
   inputId: string;
@@ -9,9 +10,17 @@ type Props = {
 
 const Select: React.FC<Props> = ({ options, label, inputId, onChange }) => {
   return (
-    <div>
-      <label htmlFor={inputId}>{label}</label>
-      <select id={inputId} className="bg-slate-700" onChange={onChange}>
+    <div className="flex gap-1 items-center">
+      <label htmlFor={inputId}>
+        <Text size="sm" color="muted">
+          {label}
+        </Text>
+      </label>
+      <select
+        className="bg-slate-500 rounded p-1 text-sm text-white"
+        id={inputId}
+        onChange={onChange}
+      >
         {options.map((option, index) => (
           <option key={option.key} value={option.key}>
             {option.value}

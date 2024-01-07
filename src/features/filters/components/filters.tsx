@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Toggle from "../../../components/toggle/toggle";
 import FilterToggle from "./filter-toggle";
 import { FilterKey, FuelType } from "../types/filter";
 import FilterSelect from "./filter-select";
@@ -10,7 +9,7 @@ type Props = {};
 
 const Filters: React.FC<Props> = ({}) => {
   return (
-    <>
+    <div className="flex gap-2">
       <FilterToggle filterKey={FilterKey.Availability} label="Only Available" />
       <FilterToggle filterKey={FilterKey.TowBar} label="Towbar" />
       <FilterToggle filterKey={FilterKey.WinterTires} label="Winter tires" />
@@ -33,7 +32,7 @@ const Filters: React.FC<Props> = ({}) => {
           },
         ]}
       />
-    </>
+    </div>
   );
 };
 

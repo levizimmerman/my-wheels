@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { FilterKey } from "../types/filter";
-import FilterSearch from "./filter-search";
+import { FilterKey } from "@/src/features/filters/types/filter";
+import FilterSearch from "@/src/features/filters/components/filter-search";
 
 const MODELS = [
   "Golf",
@@ -35,7 +35,7 @@ const ModelSearch: React.FC = () => {
     <FilterSearch
       filterKey={FilterKey.Model}
       inputId="model-search"
-      label="Car model"
+      label="Search by model"
       listId="car-models"
       options={MODELS}
       placeholder="e.g. Tesla Model Y"

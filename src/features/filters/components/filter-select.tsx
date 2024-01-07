@@ -3,7 +3,7 @@
 import React, { ChangeEvent } from "react";
 import { FilterKey } from "../types/filter";
 import Select from "@/src/components/select/select";
-import useSearchParamsMutation from "../hooks/use-search-params-mutation";
+import useSearchParamsMutation from "../../../components/hooks/use-search-params-mutation";
 
 type Props = {
   filterKey: FilterKey;

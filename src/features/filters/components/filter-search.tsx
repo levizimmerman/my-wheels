@@ -2,9 +2,10 @@
 
 import React, { ChangeEvent, FormEvent } from "react";
 import DataList from "@/src/components/data-list/data-list";
-import useSearchParamsMutation from "../hooks/use-search-params-mutation";
+import useSearchParamsMutation from "../../../components/hooks/use-search-params-mutation";
 import { FilterKey } from "../types/filter";
 import getSearchParamValue from "../utils/get-search-param-value";
+import useSearchParamsSelector from "../../../components/hooks/use-search-params-selector";
 
 type Props = {
   filterKey: FilterKey;
@@ -23,9 +24,8 @@ const FilterSearch: React.FC<Props> = ({
   listId,
   placeholder,
 }) => {
-  const [query, setQuery] = React.useState(
-    () => getSearchParamValue(filterKey) ?? "",
-  );
+  const defaultQuery = useSearchParamsSelector(filterKey);
+  const [query, setQuery] = React.useState(defaultQuery ?? "");
   const { deleteParam, setParam } = useSearchParamsMutation();
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {

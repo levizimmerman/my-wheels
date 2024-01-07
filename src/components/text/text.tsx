@@ -1,10 +1,11 @@
 import React from "react";
 import cx from "classnames";
-import { FontSize, TextColor } from "@/src/core/models/theme";
+import { FontSize, TextColor } from "@/src/types/theme";
 
 type Props = {
   children: React.ReactNode;
   color?: TextColor;
+  bold?: boolean;
   renderAs?: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size?: FontSize;
 };
@@ -27,16 +28,20 @@ const fontSizes: Record<FontSize, string> = {
 
 const colors: Record<TextColor, string> = {
   base: "text-gray-900 dark:text-slate-100",
+  muted: "text-gray-600 dark:text-slate-400",
 };
 
 const Text: React.FC<Props> = ({
   children,
   color = "base",
+  bold,
   renderAs: Component = "span",
   size = "base",
 }) => {
   return (
-    <Component className={cx(fontSizes[size], colors[color])}>
+    <Component
+      className={cx(fontSizes[size], colors[color], bold && "font-bold")}
+    >
       {children}
     </Component>
   );

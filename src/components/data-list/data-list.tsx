@@ -1,6 +1,7 @@
 "use client";
 
 import React, { ChangeEvent } from "react";
+import Text from "../text/text";
 
 type Props = {
   disabled?: boolean;
@@ -24,15 +25,17 @@ const DataList: React.FC<Props> = ({
   value,
 }) => {
   return (
-    <>
-      <label htmlFor={inputId}>{label}</label>
+    <div className="flex items-center gap-2">
+      <label htmlFor={inputId}>
+        <Text color="muted">{label}</Text>
+      </label>
       <input
-        className="text-slate-900"
+        className="bg-slate-100 dark:bg-slate-900 text-slate-900 dark:text-slate-100 rounded-xl py-2 px-4"
         id={inputId}
         list={listId}
         onChange={onChange}
         placeholder={placeholder}
-        type="text"
+        type="search"
         value={value}
         disabled={disabled}
       />
@@ -41,7 +44,7 @@ const DataList: React.FC<Props> = ({
           <option key={option} value={option} />
         ))}
       </datalist>
-    </>
+    </div>
   );
 };
 

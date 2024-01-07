@@ -13,7 +13,7 @@ export type FontSize =
   | "8xl"
   | "9xl";
 
-export type TextColor = "base";
+export type TextColor = "base" | "muted";
 
 export type Scale =
   | 0

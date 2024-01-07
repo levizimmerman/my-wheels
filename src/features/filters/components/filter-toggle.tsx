@@ -3,8 +3,8 @@
 import Toggle from "@/src/components/toggle/toggle";
 import React from "react";
 import { FilterKey } from "../types/filter";
-import useSearchParamsMutation from "../hooks/use-search-params-mutation";
-import useSearchParamsSelector from "../hooks/use-search-params-selector";
+import useSearchParamsMutation from "../../../components/hooks/use-search-params-mutation";
+import useSearchParamsSelector from "../../../components/hooks/use-search-params-selector";
 
 type Props = {
   filterKey: FilterKey;

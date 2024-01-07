@@ -1,4 +1,4 @@
-import { FuelType } from "./filter";
+// These types are generated with https://app.quicktype.io/
 
 export interface Root {
   jsonrpc: string;
@@ -8,14 +8,14 @@ export interface Root {
 }
 
 export interface Result {
-  results: Result2[];
+  results: CarResult[];
   current: number;
   offset: number;
   limit: number;
   total: number;
 }
 
-export interface Result2 {
+export interface CarResult {
   resource: Resource;
   availability: any;
   shouldDischarge: boolean;

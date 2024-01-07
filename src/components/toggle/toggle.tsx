@@ -1,6 +1,6 @@
-"use client";
-
 import React, { ChangeEvent } from "react";
+import cx from "classnames";
+import Text from "../text/text";
 
 type Props = {
   inputId: string;
@@ -14,10 +14,22 @@ const Toggle: React.FC<Props> = ({ inputId, label, onToggle, toggled }) => {
     onToggle(event.target.checked);
   };
 
+  console.log("toggled", toggled);
+
   return (
-    <div>
-      <label htmlFor={inputId}>{label}</label>
+    <div
+      className={cx([
+        "inline-block py-1 px-3 rounded relative",
+        !toggled && "dark:bg-slate-500 dark:active:bg-slate-700",
+        toggled && "dark:bg-indigo-700",
+      ])}
+    >
+      <label className="flex items-center gap-1" htmlFor={inputId}>
+        {toggled && <Text size="sm">✓</Text>}
+        <Text size="sm">{label}</Text>
+      </label>
       <input
+        className="opacity-0 absolute top-0 left-0 w-full h-full cursor-pointer"
         type="checkbox"
         id={inputId}
         checked={toggled}
