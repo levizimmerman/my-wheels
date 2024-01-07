@@ -7,6 +7,8 @@ import { PageProps } from "@/.next/types/app/page";
 
 const API_URL = "https://php-api.mywheels.dev/api/";
 
+export const dynamic = "force-dynamic";
+
 async function getData<T>({
   filter,
 }: {

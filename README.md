@@ -20,7 +20,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- Techstack
-- Project Structure
-- Todo progress
-- URL
+## Techstack
+This project features the following packages:
+- [Leaflet](https://react-leaflet.js.org/): For displaying cars on a map
+- [classnames](https://www.npmjs.com/package/classnames): For easily joining classnames together.
+- [tailwindcss](https://tailwindcss.com/): For styling components with a bare design system (best for rapid prototyping)
+
+## Project Structure
+The folder structure and component setup is based on the [Bulletproof React](https://github.com/alan2207/bulletproof-react) convention. [Here](https://github.com/alan2207/bulletproof-react/blob/master/docs/project-structure.md) you can checkout the folder structure guide lines.
+
+It comes down to a feature-based approach that scales from small to bigger projects.
+
+## Todo progress
+
+## URL
