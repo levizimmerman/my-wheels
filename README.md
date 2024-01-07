@@ -31,6 +31,25 @@ The folder structure and component setup is based on the [Bulletproof React](htt
 
 It comes down to a feature-based approach that scales from small to bigger projects.
 
-## Todo progress
+## Task list
+### Assignment
+This was the original assignment:
+>Create a small application that displays a list of resources (cars) that are provided by the API. Use the useApi method provided in src/api.js to fetch the JSON containing the resources.
 
-## URL
+- [x] Display a list of resources, for each of the items in the list display at least the following information: `Brand`, `Model`, `Address`, `Fuel type`, `Availability`, `Rate per/hour`
+- [x] Add an input field that searches for specific resource models.
+- [x] Create a way to filter the list on fuel type, availability, winter tires and towbar.
+- [x] Show the number of found resources.
+
+### Optional tasks
+>As a bonus one of the following additional features could be added to the application.
+
+- [x] Add the option to toggle between a list view and a map view.
+- [x] Convert the code to use TypeScript
+- [x] Use Next.js instead of the Webpack setup.
+- [x] Add a personal touch by styling the application.
+- [ ] Pitch an idea for a great additional feature and show (in rough lines) how that could be implemented.
+- [ ] Create automated tests for (a part) of the application.
+
+## Preview
+https://my-wheels-isgyhtu0s-leviodjiezimmerman.vercel.app/
