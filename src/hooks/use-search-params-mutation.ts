@@ -16,6 +16,12 @@ const useSearchParamsMutation = () => {
     navigateByParams(params);
   };
 
+  const deleteParams = (keys: string[]) => {
+    const params = new URLSearchParams(searchParams);
+    keys.forEach((key) => params.delete(key));
+    navigateByParams(params);
+  };
+
   const setParam = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams);
     params.set(key, value);
@@ -24,6 +30,7 @@ const useSearchParamsMutation = () => {
 
   return React.useMemo(
     () => ({
+      deleteParams,
       deleteParam,
       setParam,
     }),

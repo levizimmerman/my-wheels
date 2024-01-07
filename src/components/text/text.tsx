@@ -8,6 +8,7 @@ type Props = {
   bold?: boolean;
   renderAs?: "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   size?: FontSize;
+  underline?: boolean;
 };
 
 const fontSizes: Record<FontSize, string> = {
@@ -37,10 +38,16 @@ const Text: React.FC<Props> = ({
   bold,
   renderAs: Component = "span",
   size = "base",
+  underline,
 }) => {
   return (
     <Component
-      className={cx(fontSizes[size], colors[color], bold && "font-bold")}
+      className={cx(
+        fontSizes[size],
+        colors[color],
+        bold && "font-bold",
+        underline && "underline",
+      )}
     >
       {children}
     </Component>
