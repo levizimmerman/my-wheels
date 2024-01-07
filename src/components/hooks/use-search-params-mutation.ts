@@ -4,10 +4,10 @@ import React from "react";
 const useSearchParamsMutation = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
-  const { replace } = useRouter();
+  const { push } = useRouter();
 
   const navigateByParams = (params: URLSearchParams) => {
-    replace(`${pathname}?${params.toString()}`);
+    push(`${pathname}?${params.toString()}`);
   };
 
   const deleteParam = (key: string) => {
@@ -27,7 +27,7 @@ const useSearchParamsMutation = () => {
       deleteParam,
       setParam,
     }),
-    [searchParams, pathname, replace],
+    [searchParams, pathname, push],
   );
 };
 
