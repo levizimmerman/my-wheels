@@ -2,10 +2,9 @@
 
 import React, { ChangeEvent, FormEvent } from "react";
 import DataList from "@/src/components/data-list/data-list";
-import useSearchParamsMutation from "../../../components/hooks/use-search-params-mutation";
-import { FilterKey } from "../types/filter";
-import getSearchParamValue from "../utils/get-search-param-value";
-import useSearchParamsSelector from "../../../components/hooks/use-search-params-selector";
+import useSearchParamsMutation from "@/src/components/hooks/use-search-params-mutation";
+import { FilterKey } from "@/src/features/filters/types/filter";
+import useSearchParamsSelector from "@/src/components/hooks/use-search-params-selector";
 
 type Props = {
   filterKey: FilterKey;

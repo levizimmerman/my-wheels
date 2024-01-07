@@ -3,7 +3,8 @@
 import React, { ChangeEvent } from "react";
 import { FilterKey } from "../types/filter";
 import Select from "@/src/components/select/select";
-import useSearchParamsMutation from "../../../components/hooks/use-search-params-mutation";
+import useSearchParamsMutation from "@/src/components/hooks/use-search-params-mutation";
+import useSearchParamsSelector from "@/src/components/hooks/use-search-params-selector";
 
 type Props = {
   filterKey: FilterKey;
@@ -12,6 +13,7 @@ type Props = {
 };
 
 const FilterSelect: React.FC<Props> = ({ filterKey, options, label }) => {
+  const filterValue = useSearchParamsSelector(filterKey);
   const { setParam, deleteParam } = useSearchParamsMutation();
 
   const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
@@ -28,6 +30,7 @@ const FilterSelect: React.FC<Props> = ({ filterKey, options, label }) => {
       options={options}
       label={label}
       onChange={handleChange}
+      value={filterValue}
     />
   );
 };

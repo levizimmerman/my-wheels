@@ -1,5 +1,4 @@
 import React from "react";
-
 import Card from "@/src/components/card/card";
 import CarName from "./car-name";
 import CarAddress from "./car-address";
@@ -9,7 +8,7 @@ import CarRate from "./car-rate";
 import {
   CarSelectionApiContext,
   CarSelectionDataContext,
-} from "../../search-results/providers/car-selection";
+} from "@/src/features/search-results/providers/car-selection";
 
 type Props = {
   availability: string;

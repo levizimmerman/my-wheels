@@ -13,7 +13,8 @@ const CarRate: React.FC<Props> = ({ rate, selected }) => {
   return (
     <div
       className={cx(
-        "flex flex-col items-center bg-slate-800 p-4 rounded-xl",
+        "flex flex-col items-center p-4 rounded-xl",
+        !selected && "bg-slate-300 dark:bg-slate-800",
         selected && "bg-indigo-100 dark:bg-indigo-900",
       )}
     >

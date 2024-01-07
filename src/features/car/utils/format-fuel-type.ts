@@ -1,4 +1,4 @@
-import { FuelType } from "../../filters/types/filter";
+import { FuelType } from "@/src/features/filters/types/filter";
 
 const formatFuelType = (fuelType?: string) => {
   switch (fuelType) {

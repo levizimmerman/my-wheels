@@ -3,11 +3,11 @@
 import React from "react";
 import Leaflet from "leaflet";
 import { Marker, Popup, useMap } from "react-leaflet";
-import CarResult from "../../car/components/car-result";
+import CarResult from "@/src/features/car/components/car-result";
 import {
   CarSelectionApiContext,
   CarSelectionDataContext,
-} from "../../search-results/providers/car-selection";
+} from "@/src/features/search-results/providers/car-selection";
 import "./car-marker.css";
 
 type Props = {

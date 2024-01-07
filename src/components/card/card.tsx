@@ -17,9 +17,9 @@ const Card: React.FC<Props> = ({
   return (
     <Component
       className={cx(
-        "shadow-lg rounded-xl",
-        backgroundColor === "base" && "bg-white dark:bg-slate-900",
-        backgroundColor === "selected" && "bg-indigo-300 dark:bg-indigo-800",
+        "shadow-sm rounded-xl",
+        backgroundColor === "base" && "bg-slate-100 dark:bg-slate-900",
+        backgroundColor === "selected" && "bg-indigo-200 dark:bg-indigo-800",
         backgroundColorHover === "base" &&
           "hover:bg-slate-100 hover:dark:bg-slate-700",
         backgroundColorHover === "selection" &&

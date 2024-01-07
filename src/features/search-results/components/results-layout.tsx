@@ -8,6 +8,7 @@ import CarLocationsMap from "@/src/features/map/components/car-locations-map";
 import Toggle from "@/src/components/toggle/toggle";
 import useSearchParamsSelector from "@/src/components/hooks/use-search-params-selector";
 import useSearchParamsMutation from "@/src/components/hooks/use-search-params-mutation";
+import Text from "@/src/components/text/text";
 
 type Props = {
   cars: CarResultType[];
@@ -27,6 +28,20 @@ const ResultsLayout: React.FC<Props> = ({ cars, total }) => {
       setParam(MAP_SEARCH_KEY, "true");
     }
   };
+
+  if (cars.length === 0) {
+    return (
+      <div>
+        <Text size="lg">No cars found. Please try a different search.</Text>
+
+        <img
+          className="rounded-xl mt-4"
+          src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExanAyNmxibXI1MGViYThueGk3eDl2NWFlOWtidmVpZTN0c2UzcHduMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/Q9asa1YwLn6b8CCSHB/giphy-downsized-large.gif"
+          alt="Dude where is my car?!"
+        />
+      </div>
+    );
+  }
 
   return (
     <CarSelectionProvider>

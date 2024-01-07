@@ -3,19 +3,15 @@ import Filters from "@/src/features/filters/components/filters";
 import ModelSearch from "@/src/features/filters/components/model-search";
 import searchToApiParams from "@/src/features/filters/utils/search-to-api-params";
 import ResultsLayout from "@/src/features/search-results/components/results-layout";
-import Heading from "@/src/components/text/heading";
+import { PageProps } from "@/.next/types/app/page";
 
 const API_URL = "https://php-api.mywheels.dev/api/";
 
-type Filter = {
-  models?: string[];
-};
-
-type GetData = {
-  filter: Filter;
-};
-
-async function getData<T>({ filter }: GetData): Promise<T> {
+async function getData<T>({
+  filter,
+}: {
+  filter: ReturnType<typeof searchToApiParams>;
+}): Promise<T> {
   const body = {
     method: "search.map",
     params: {
@@ -46,10 +42,6 @@ async function getData<T>({ filter }: GetData): Promise<T> {
   return data;
 }
 
-type PageProps = {
-  searchParams?: Record<string, string>;
-};
-
 export default async function Home({ searchParams }: PageProps) {
   const data = await getData<Root>({
     filter: searchToApiParams(searchParams),
@@ -57,7 +49,7 @@ export default async function Home({ searchParams }: PageProps) {
 
   return (
     <main className="h-screen flex flex-col">
-      <div className="flex gap-6 mb-8 p-8 bg-slate-700">
+      <div className="flex gap-6 p-8 bg-slate-300 dark:bg-slate-700">
         <div className="flex gap-4 flex-col">
           <ModelSearch />
           <Filters />

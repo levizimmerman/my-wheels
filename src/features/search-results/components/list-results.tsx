@@ -1,5 +1,5 @@
 import React from "react";
-import type { CarResult as CarResultType } from "../../filters/types/dto-api";
+import type { CarResult as CarResultType } from "@/src/features/filters/types/dto-api";
 import { CarResultSelectable } from "@/src/features/car/components/car-result";
 
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 
 const ListResults: React.FC<Props> = ({ cars }) => {
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-3">
       {cars.map(({ resource, availability }) => {
         const {
           registrationPlate,

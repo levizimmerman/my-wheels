@@ -1,5 +1,5 @@
 import dynamic from "next/dynamic";
-import { CarResult } from "../../filters/types/dto-api";
+import { CarResult } from "@/src/features/filters/types/dto-api";
 
 const DynamicMap = dynamic(() => import("./car-locations-map-dynamic"), {
   ssr: false,

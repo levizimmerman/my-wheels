@@ -9,7 +9,7 @@ type Props = {
 
 const Header: React.FC<Props> = ({ description, title }) => {
   return (
-    <header className="bg-slate-800 px-8 py-4 flex items-center gap-4 shadow-lg z-10">
+    <header className="bg-gray-100 dark:bg-slate-800 px-8 py-4 flex items-center gap-4 shadow-lg z-10">
       <Heading size="xl" bold>
         {title}
       </Heading>

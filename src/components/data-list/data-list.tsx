@@ -1,7 +1,7 @@
 "use client";
 
 import React, { ChangeEvent } from "react";
-import Text from "../text/text";
+import Text from "@/src/components/text/text";
 
 type Props = {
   disabled?: boolean;
