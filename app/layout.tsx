@@ -19,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cx(inter.className, "dark:bg-slate-800")}>
-        <Header title={metadata.title} description={metadata.description} />
+        <Header
+          title={metadata.title as string}
+          description={metadata.description as string}
+        />
         {children}
       </body>
     </html>
