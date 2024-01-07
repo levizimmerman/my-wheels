@@ -18,8 +18,6 @@ const Select: React.FC<Props> = ({
   value,
 }) => {
   const hasValue = !!value;
-  console.log("value", value);
-  console.log("hasValue", hasValue);
   return (
     <div className="flex gap-1 items-center">
       <label htmlFor={inputId}>

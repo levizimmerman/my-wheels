@@ -14,8 +14,6 @@ const Toggle: React.FC<Props> = ({ inputId, label, onToggle, toggled }) => {
     onToggle(event.target.checked);
   };
 
-  console.log("toggled", toggled);
-
   return (
     <div
       className={cx([
