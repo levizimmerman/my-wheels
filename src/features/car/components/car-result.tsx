@@ -74,6 +74,7 @@ export const CarResultSelectable: React.FC<
     CarSelectionApiContext,
   );
   const selected = carSelection?.registrationPlate === props.registrationPlate;
+  const divRef = React.useRef<HTMLDivElement>(null);
 
   const handleClick = () => {
     if (selected) {
@@ -85,8 +86,15 @@ export const CarResultSelectable: React.FC<
       });
     }
   };
+
+  React.useEffect(() => {
+    if (carSelection?.registrationPlate === props.registrationPlate) {
+      divRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [carSelection?.registrationPlate]);
+
   return (
-    <div role="button" onClick={handleClick}>
+    <div role="button" onClick={handleClick} ref={divRef}>
       <CarResult {...props} reactOnHover selected={selected} />
     </div>
   );

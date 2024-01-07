@@ -86,7 +86,7 @@ const ResultsLayout: React.FC<Props> = ({ cars, total }) => {
         />
       </div>
       <div className="flex gap-4">
-        <div className="flex-grow basis-4/12 transition-all">
+        <div className="flex-grow basis-4/12 transition-all overflow-auto max-h-screen">
           <ListResults cars={cars} />
         </div>
         {mapToggled && (
